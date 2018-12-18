@@ -8,7 +8,5 @@ class UrlMappings {
         }
 
         "/"(controller: "personDomain")
-        "500"(view: '/error')
-        "404"(view: '/notFound')
     }
 }
