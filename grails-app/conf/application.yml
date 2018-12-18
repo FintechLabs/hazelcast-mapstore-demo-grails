@@ -85,7 +85,7 @@ environments:
           driverClassName: com.mysql.jdbc.Driver
           dialect: org.hibernate.dialect.MySQL5InnoDBDialect
           username: root
-          password: 
+          password:
           dbCreate: create-drop
           url: jdbc:mysql://localhost/webhook_loader?useUnicode=yes&characterEncoding=UTF-8
     test:
