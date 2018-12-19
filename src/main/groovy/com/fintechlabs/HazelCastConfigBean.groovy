@@ -11,7 +11,7 @@ class HazelCastConfigBean {
 
     HazelCastConfigBean() {
         ClientConfig clientConfig = new ClientConfig()
-        clientConfig.getNetworkConfig().addAddress("127.0.0.1:6876", "127.0.0.1:2356")
+        clientConfig.getNetworkConfig().addAddress("127.0.0.1:6876")
         clientConfig.setGroupConfig(new GroupConfig("dev", "dev-pass"))
         clientConfig.setProperty("hazelcast.client.statistics.enabled", "true")
         this.client = HazelcastClient.newHazelcastClient(clientConfig)

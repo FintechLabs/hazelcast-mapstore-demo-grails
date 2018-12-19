@@ -4,7 +4,7 @@ import org.apache.commons.lang.RandomStringUtils
 class BootStrap {
 
     def init = { servletContext ->
-        (0..9).each { num ->
+        (0..19).each { num ->
             PersonDomain personDomain = new PersonDomain()
             personDomain.firstName = "Test"
             personDomain.lastName = "Person #${num + 1}"
