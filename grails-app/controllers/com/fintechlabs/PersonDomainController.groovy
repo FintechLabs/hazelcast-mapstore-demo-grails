@@ -6,9 +6,9 @@ class PersonDomainController {
 
     def index = {
         def personMap = hazelCastConfigBean.client.getMap("personMap")
-        List<Person> personList = []
+        List<com.fintechlabs.model.PersonDomainHazel> personList = []
         personMap.each { def key, def value ->
-            personList << (value as Person)
+            personList << (value as com.fintechlabs.model.PersonDomainHazel)
         }
         [personList: personList]
     }
@@ -17,7 +17,7 @@ class PersonDomainController {
 
     def save = {
         def personMap = hazelCastConfigBean.client.getMap("personMap")
-        Person person = new Person()
+        com.fintechlabs.model.PersonDomainHazel person = new com.fintechlabs.model.PersonDomainHazel()
         person.setFirstName(params.firstName)
         person.setLastName(params.lastName)
         person.setEmailAddress(params.emailAddress)
@@ -36,7 +36,7 @@ class PersonDomainController {
 
     def show = {
         def personMap = hazelCastConfigBean.client.getMap("personMap")
-        Person person = personMap.get(params.id) as Person
+        com.fintechlabs.model.PersonDomainHazel person = personMap.get(params.id) as com.fintechlabs.model.PersonDomainHazel
         [person: person]
     }
 
