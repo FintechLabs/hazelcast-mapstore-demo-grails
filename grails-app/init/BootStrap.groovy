@@ -1,7 +1,10 @@
+import com.fintechlabs.HazelCastConfigBean
 import com.fintechlabs.PersonDomain
 import org.apache.commons.lang.RandomStringUtils
 
 class BootStrap {
+
+    HazelCastConfigBean hazelCastConfigBean
 
     def init = { servletContext ->
         (0..19).each { num ->
@@ -12,6 +15,7 @@ class BootStrap {
             personDomain.emailAddress = "person${num + 1}@email.com"
             personDomain.save(flush: true)
         }
+        hazelCastConfigBean.client.getMap("localizationMap").get(2L)
     }
     def destroy = {
     }
