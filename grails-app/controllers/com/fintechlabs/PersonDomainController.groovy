@@ -1,8 +1,10 @@
 package com.fintechlabs
 
+import com.fintechlabs.messaging.ListenerOne
+
 class PersonDomainController {
 
-    HazelCastConfigBean hazelCastConfigBean
+    ListenerOne listenerOne
 
     def index = {
 //        def personMap = hazelCastConfigBean.client.getMap("personMap")
@@ -10,6 +12,7 @@ class PersonDomainController {
 //        personMap.each { def key, def value ->
 //            personList << (value as com.fintechlabs.model.PersonDomainHazel)
 //        }
+        listenerOne.publishMessage("Hello World!")
         [personList: []]
     }
 
